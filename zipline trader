@@ -1,2 +1,15 @@
 https://github.com/quantopian/zipline
 
+Zipline Trader
+Welcome to zipline-trader, the on-premise trading platform built on top of Quantopian’s zipline.
+
+Quantopian closed their services, so this project tries to be a suitable replacement.
+
+zipline-trader is based on previous projects and work:
+
+zipline project.
+
+zipline-live project.
+
+zipline-live2 project.
+
