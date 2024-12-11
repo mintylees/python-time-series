@@ -1,3 +1,25 @@
  pip install investpy
 
- 
+ import investpy
+
+df = investpy.get_stock_historical_data(stock='AAPL',
+                                        country='United States',
+                                        from_date='01/01/2010',
+                                        to_date='01/01/2020')
+print(df.head())
+
+technical_indicators = search_result.retrieve_technical_indicators(interval="daily")
+print(technical_indicators)
+
+default_currency = search_result.retrieve_currency()
+print(default_currency)
+
+
+import investpy
+
+data = investpy.get_crypto_historical_data(crypto='bitcoin',
+                                           from_date='01/01/2014',
+                                           to_date='01/01/2019')
+
+print(data.head())
+
