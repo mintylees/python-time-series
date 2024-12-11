@@ -13,3 +13,30 @@ df.set_index('Date', inplace=True)
 
 # mean value based off the end of the year resampling
 df.resample(rule='A').mean()
+
+# quarterly resampling
+df.resample(rule='Q').mean()
+
+df.shift(periods=1).head()
+df['Open'].plot(figsize=(16,6))
+df.rolling(7).mean().head(14)
+
+df['Open'].plot()
+df.rolling(7).mean()['Close'].plot(figsize=(16,6))
+
+df['Close'].expanding().mean().plot(figsize=(16,6))
+
+# Close 20 MA
+df['Close: 20 Day Mean'] = df['Close'].rolling(20).mean()
+
+# Upper = 20MA + 2*std(20)
+df['Upper'] = df['Close: 20 Day Mean'] + 2*(df['Close'].rolling(20).std())
+
+# Lower = 20MA - 2*std(20)
+df['Lower'] = df['Close: 20 Day Mean'] - 2*(df['Close'].rolling(20).std())
+
+# Plot Close
+df[['Close','Close: 20 Day Mean','Upper','Lower']].plot(figsize=(16,6))
+
+
+
